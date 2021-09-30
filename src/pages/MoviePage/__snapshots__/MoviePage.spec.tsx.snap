@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render single movie page matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h5
+      class="MuiTypography-root MuiTypography-h5"
+    >
+      actors
+    </h5>
+    <h5
+      class="MuiTypography-root MuiTypography-h5"
+    >
+      moreLikeThis
+    </h5>
+    <div
+      class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-1"
+    >
+      <div
+        class="swiper-button-prev"
+      />
+      <div
+        class="swiper-button-next"
+      />
+      <div
+        class="swiper-wrapper"
+        style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

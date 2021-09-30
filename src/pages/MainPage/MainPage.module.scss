@@ -1,0 +1,17 @@
+@import '../../theme/colors.scss';
+
+.container {
+  min-height: calc(100vh - 128px);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.title {
+  color: $darkBlue;
+}
+
+@media screen and (max-width: 745px) {
+  .container {
+    min-height: calc(100vh - 176px);
+  }
+}

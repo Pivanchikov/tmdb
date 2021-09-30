@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot 1`] = `
+<DocumentFragment>
+  <header>
+    <section>
+      <div>
+        <img
+          alt="TMDB"
+          data-testid="logo"
+          height="24px"
+          src="SvgrURL"
+          width="154px"
+        />
+      </div>
+      <div>
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-languageSwitcher-13 MuiButton-text"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label makeStyles-label-14"
+          >
+            en
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </section>
+  </header>
+</DocumentFragment>
+`;

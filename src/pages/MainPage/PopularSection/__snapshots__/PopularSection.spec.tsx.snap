@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render popular section matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h5
+      class="MuiTypography-root makeStyles-title-1 MuiTypography-h5"
+    >
+      popularMovies
+    </h5>
+    <div
+      class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-2"
+    >
+      <div
+        class="swiper-button-prev"
+      />
+      <div
+        class="swiper-button-next"
+      />
+      <div
+        class="swiper-wrapper"
+        style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

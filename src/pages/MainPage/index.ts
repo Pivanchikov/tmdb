@@ -1,0 +1,6 @@
+export * from './MainPage'
+export * from './NowPlayingSection'
+export * from './PopularSection'
+export * from './TrendingSection'
+export * from './UpcomingSection'
+export * from './TopRatedSection'

@@ -1,0 +1,45 @@
+@import '../../theme/colors.scss';
+
+.header {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  background-color: $darkBlue;
+
+  &__content {
+    max-width: 1300px;
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+
+    img:first-child {
+      margin-right: 16px;
+    }
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px;
+  }
+
+  .button {
+    color: $white;
+  }
+
+  @media screen and (max-width: 960px) {
+    .toolbar {
+      min-width: auto;
+    }
+  }
+}

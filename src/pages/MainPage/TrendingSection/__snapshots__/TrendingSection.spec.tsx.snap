@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render trending section matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="makeStyles-header-14"
+    >
+      <h5
+        class="MuiTypography-root makeStyles-title-13 MuiTypography-h5"
+      >
+        trending
+      </h5>
+      <div
+        class="makeStyles-switchContainer-15"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorPrimary"
+        >
+          today
+        </p>
+        <span
+          class="MuiSwitch-root"
+        >
+          <span
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-19 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+            data-testid="switch"
+          >
+            <span
+              class="MuiIconButton-label"
+            >
+              <input
+                class="PrivateSwitchBase-input-22 MuiSwitch-input"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="MuiSwitch-thumb makeStyles-thumb-17"
+              />
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </span>
+          <span
+            class="MuiSwitch-track makeStyles-track-16"
+          />
+        </span>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorPrimary"
+        >
+          thisWeek
+        </p>
+      </div>
+    </div>
+    <div
+      class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-23"
+    >
+      <div
+        class="swiper-button-prev"
+      />
+      <div
+        class="swiper-button-next"
+      />
+      <div
+        class="swiper-wrapper"
+        style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

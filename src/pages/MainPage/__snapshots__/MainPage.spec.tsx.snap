@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render main page matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <h5
+        class="MuiTypography-root makeStyles-title-1 MuiTypography-h5"
+      >
+        popularMovies
+      </h5>
+      <div
+        class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-2"
+      >
+        <div
+          class="swiper-button-prev"
+        />
+        <div
+          class="swiper-button-next"
+        />
+        <div
+          class="swiper-wrapper"
+          style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        class="makeStyles-header-5"
+      >
+        <h5
+          class="MuiTypography-root makeStyles-title-4 MuiTypography-h5"
+        >
+          trending
+        </h5>
+        <div
+          class="makeStyles-switchContainer-6"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-colorPrimary"
+          >
+            today
+          </p>
+          <span
+            class="MuiSwitch-root"
+          >
+            <span
+              aria-disabled="false"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-10 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+              data-testid="switch"
+            >
+              <span
+                class="MuiIconButton-label"
+              >
+                <input
+                  class="PrivateSwitchBase-input-13 MuiSwitch-input"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="MuiSwitch-thumb makeStyles-thumb-8"
+                />
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </span>
+            <span
+              class="MuiSwitch-track makeStyles-track-7"
+            />
+          </span>
+          <p
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-colorPrimary"
+          >
+            thisWeek
+          </p>
+        </div>
+      </div>
+      <div
+        class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-2"
+      >
+        <div
+          class="swiper-button-prev"
+        />
+        <div
+          class="swiper-button-next"
+        />
+        <div
+          class="swiper-wrapper"
+          style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+        />
+      </div>
+    </div>
+    <div>
+      <h5
+        class="MuiTypography-root makeStyles-title-14 MuiTypography-h5"
+      >
+        nowPlaying
+      </h5>
+      <div
+        class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-2"
+      >
+        <div
+          class="swiper-button-prev"
+        />
+        <div
+          class="swiper-button-next"
+        />
+        <div
+          class="swiper-wrapper"
+          style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+        />
+      </div>
+    </div>
+    <div>
+      <h5
+        class="MuiTypography-root makeStyles-title-15 MuiTypography-h5"
+      >
+        upcoming
+      </h5>
+      <div
+        class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-2"
+      >
+        <div
+          class="swiper-button-prev"
+        />
+        <div
+          class="swiper-button-next"
+        />
+        <div
+          class="swiper-wrapper"
+          style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+        />
+      </div>
+    </div>
+    <div>
+      <h5
+        class="MuiTypography-root makeStyles-title-16 MuiTypography-h5"
+      >
+        topRated
+      </h5>
+      <div
+        class="swiper-container swiper-container-initialized swiper-container-horizontal makeStyles-swiper-2"
+      >
+        <div
+          class="swiper-button-prev"
+        />
+        <div
+          class="swiper-button-next"
+        />
+        <div
+          class="swiper-wrapper"
+          style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Found Movie component matches snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="makeStyles-container-43"
+  >
+    <div
+      class="poster"
+    >
+      <img
+        alt="poster"
+        class="makeStyles-poster-45"
+        data-testid="poster"
+        height="300px"
+        src="https://image.tmdb.org/t/p/w200/jDwZavHo99JtGsCyRzp4epeeBHx.jpg"
+        width="200px"
+      />
+    </div>
+    <div
+      class="makeStyles-movieInfo-44"
+    >
+      <header
+        class="makeStyles-header-46"
+      >
+        <h5
+          class="MuiTypography-root makeStyles-title-47 MuiTypography-h5"
+          data-testid="title"
+        >
+          Evangelion: 3.0+1.0 Thrice Upon a Time
+        </h5>
+        <p
+          class="MuiTypography-root makeStyles-green-54 MuiTypography-body1"
+          data-testid="vote"
+        >
+          8.8
+        </p>
+      </header>
+      <p
+        class="MuiTypography-root makeStyles-date-49 MuiTypography-body1"
+        data-testid="date"
+      >
+        2021
+      </p>
+      <p
+        class="MuiTypography-root makeStyles-overview-50 MuiTypography-body1"
+        data-testid="overview"
+      >
+        In the aftermath of the Fourth Impact, stranded without their Evangelions, Shinji, Asuka, and Rei search for refuge in the desolate red remains of Tokyo-3. But the danger to the world is far from over. A new impact is looming on the horizon—one that will prove to be the true end of Evangelion.
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;
