@@ -3,15 +3,17 @@ import SwiperCore, { Navigation } from 'swiper'
 import { Swiper as SwiperReact, SwiperSlide } from 'swiper/react'
 import { makeStyles } from '@material-ui/core'
 
-import { MovieCard } from '../MovieCard'
+import { MovieCard, PeopleCard } from '../'
 import { Movie } from '../../state/types'
+import { People } from '../../components/PeopleCard/types'
 import { styles } from './Swiper.styles'
 
 import 'swiper/swiper-bundle.css'
 import './Swiper.css'
 
 type SwiperProps = {
-  items: Movie[]
+  items: Movie[] | People[]
+  people?: boolean
 }
 
 SwiperCore.use([Navigation])
@@ -36,7 +38,7 @@ const breakpoints = {
   },
 }
 
-export const Swiper = ({ items }: SwiperProps) => {
+export const Swiper = ({ items, people = false }: SwiperProps) => {
   const classes = useStyles()
 
   return (
@@ -48,9 +50,9 @@ export const Swiper = ({ items }: SwiperProps) => {
       navigation
       className={classes.swiper}
     >
-      {items.map((movie, index) => (
+      {items.map((item, index) => (
         <SwiperSlide key={index} className={classes.slider}>
-          <MovieCard movie={movie} />
+          {people ? <PeopleCard people={item} /> : <MovieCard movie={item} />}
         </SwiperSlide>
       ))}
     </SwiperReact>

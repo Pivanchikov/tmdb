@@ -80,4 +80,10 @@ describe('Api', () => {
 
     await expect(getTopRated(RU)).resolves.toEqual(expectedMovies)
   })
+
+  // it('fetches movie details from an API', async (id) => {
+  //   mockedAxios.get.mockImplementationOnce(() => Promise.resolve(expectedMovies))
+
+  //   await expect(getTopRated(RU)).resolves.toEqual(expectedMovies)
+  // })
 })

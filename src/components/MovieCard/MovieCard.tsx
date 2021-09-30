@@ -1,9 +1,11 @@
 import { Typography, makeStyles } from '@material-ui/core'
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import { AverageVote } from '..'
 import { Movie } from '../../state/types'
+import { setMovieId } from '../../state'
 import { getPosterPath, getVote } from '../../pages/DiscoverPage/FoundMovie/utils'
 import { styles } from './MovieCard.styles'
 
@@ -14,14 +16,17 @@ type PopularCardProps = {
 const useStyles = makeStyles(styles)
 
 export const MovieCard = ({ movie }: PopularCardProps) => {
+  const dispatch = useDispatch()
   const classes = useStyles()
   const posterPath = getPosterPath(movie)
   const vote = getVote(movie)
   const redirectPath = movie && `/movie/${movie.id}-${movie.title}`
-
   const [redirect, setRedirect] = useState(false)
 
-  const redirectToMovie = () => setRedirect(true)
+  const redirectToMovie = () => {
+    dispatch(setMovieId(movie.id))
+    setRedirect(true)
+  }
 
   return (
     <>

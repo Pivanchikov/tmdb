@@ -36,3 +36,15 @@ export const getUpcoming = async languageCode =>
 
 export const getTopRated = async languageCode =>
   await axios.get(`${HOST}/movie/top_rated?api_key=${API_KEY}&language=${languageCode}`)
+
+export const getDetails = async (id, languageCode) =>
+  await axios.get(`${HOST}/movie/${id}?api_key=${API_KEY}&language=${languageCode}`)
+
+export const getCredits = async (id, languageCode) =>
+  await axios.get(`${HOST}/movie/${id}/credits?api_key=${API_KEY}&language=${languageCode}`)
+
+export const getReviews = async (id, languageCode) =>
+  await axios.get(`${HOST}/movie/${id}/reviews?api_key=${API_KEY}&language=${languageCode}`)
+
+export const getRecommendations = async (id, languageCode) =>
+  await axios.get(`${HOST}/movie/${id}/recommendations?api_key=${API_KEY}&language=${languageCode}`)

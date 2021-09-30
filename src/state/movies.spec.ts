@@ -1,18 +1,9 @@
-import {
-  getMoviesId,
-  fetchMovies,
-  moviesSlice,
-  transformGenres,
-  getRandom,
-  fetchGenres,
-  fetchSingleMovie,
-  fetchPopularMovies,
-  fetchTrendingMovies,
-  fetchNowPlayingMovies,
-  fetchUpcomingMovies,
-  fetchTopRatedMovies,
-} from './movies'
+import axios from 'axios'
+import { i18n } from '../i18n/i18n'
 import { configureStore } from '@reduxjs/toolkit'
+
+import { transformGenres, getRandom, getMoviesId } from './utils'
+import { HOST, API_KEY } from '../config'
 import {
   mockMovies,
   movies,
@@ -24,9 +15,17 @@ import {
   ruGenresSelectMock,
   initialState,
 } from '../__mocks__/'
-import { HOST, API_KEY } from '../config'
-import axios from 'axios'
-import { i18n } from '../i18n/i18n'
+import {
+  fetchMovies,
+  moviesSlice,
+  fetchGenres,
+  fetchSingleMovie,
+  fetchPopularMovies,
+  fetchTrendingMovies,
+  fetchNowPlayingMovies,
+  fetchUpcomingMovies,
+  fetchTopRatedMovies,
+} from './movies'
 
 jest.mock('i18next', () => ({
   language: 'en',

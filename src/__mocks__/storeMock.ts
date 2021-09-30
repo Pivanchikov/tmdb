@@ -12,4 +12,9 @@ export const initialState: MoviesState = {
   nowPlayingMovies: [],
   upcomingMovies: [],
   topRatedMovies: [],
+  movieDetails: null,
+  recommendationMovies: [],
+  credits: null,
+  reviews: null,
+  movieId: null,
 }

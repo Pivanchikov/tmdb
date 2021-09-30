@@ -2,13 +2,18 @@
 
 .container {
   min-height: calc(100vh - 128px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .title {
   color: $darkBlue;
+  padding: 10px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 745px) {

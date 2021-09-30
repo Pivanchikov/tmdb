@@ -1,4 +1,5 @@
 {
+  "actors": "Actors",
   "API": "API",
   "about": "About",
   "airingToday": "Airing Today",
@@ -23,6 +24,7 @@
   "koreaSouth": "Korea, D.P.R.",
   "mexico": "Mexico",
   "more": "More",
+  "moreLikeThis": "More like this",
   "movies": "Movies",
   "nowPlaying": "Now Playing",
   "onTv": "On TV",

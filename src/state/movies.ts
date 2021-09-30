@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk, createSelector, createAction } from '@reduxjs/toolkit'
-import { capitalize } from 'lodash'
 import i18n from 'i18next'
 
 import {
@@ -11,9 +10,13 @@ import {
   getNowPlaying,
   getUpcoming,
   getTopRated,
+  getDetails,
+  getCredits,
+  getReviews,
+  getRecommendations,
 } from '../api/api'
-import { MoviesState, fetchSingleMovieParams } from './types'
-import { RU } from '../i18n/i18n'
+import { MoviesState, fetchSingleMovieParams, Movie, Credits, Reviews } from './types'
+import { transformGenres, getMoviesId, getRandom } from './utils'
 
 const ACTIONS = {
   fetchMovies: 'movies/searchMovies',
@@ -24,20 +27,8 @@ const ACTIONS = {
   fetchNowPlayingMovies: 'movies/nowPlayingMovies',
   fetchUpcomingMovies: 'movies/upcomingMovies',
   fetchTopRatedMovies: 'movies/topRatedMovies',
+  fetchMovieDetails: 'movies/movieDetails',
 }
-
-export const transformGenres = genres =>
-  i18n.language === RU
-    ? genres.map(genre => ({
-        value: genre.id,
-        label: capitalize(genre.name),
-      }))
-    : genres.map(genre => ({
-        value: genre.id,
-        label: genre.name,
-      }))
-
-export const getRandom = (min, max): number => Math.floor(Math.random() * (max - min)) + min
 
 export const fetchMovies = createAsyncThunk<[], string>(
   `${ACTIONS.fetchMovies}`,
@@ -169,12 +160,21 @@ export const fetchTopRatedMovies = createAsyncThunk(
   }
 )
 
-export const getMoviesId = value =>
-  value.reduce((byId, item) => {
-    byId[item.id.toString()] = item
+export const fetchMovieDetails = createAsyncThunk<[Movie, Movie[], Credits, Reviews], number>(
+  `${ACTIONS.fetchMovieDetails}`,
+  async (id, { rejectWithValue }) => {
+    try {
+      const details = await getDetails(id, i18n.language)
+      const credits = await getCredits(id, i18n.language)
+      const reviews = await getReviews(id, i18n.language)
+      const recommendations = await getRecommendations(id, i18n.language)
 
-    return byId
-  }, {})
+      return [details.data, recommendations.data.results, credits.data, reviews.data.results]
+    } catch (err) {
+      return rejectWithValue(err)
+    }
+  }
+)
 
 const initialState: MoviesState = {
   items: [],
@@ -188,8 +188,15 @@ const initialState: MoviesState = {
   nowPlayingMovies: [],
   upcomingMovies: [],
   topRatedMovies: [],
+  movieDetails: null,
+  recommendationMovies: [],
+  credits: null,
+  reviews: null,
+  movieId: null,
 }
 export const setMovieFound = createAction('setMovieFound', (t: boolean) => ({ payload: t }))
+export const setMovieId = createAction('setMovieId', (t: number) => ({ payload: t }))
+
 export const moviesSlice = createSlice({
   name: 'movies',
   initialState,
@@ -252,10 +259,22 @@ export const moviesSlice = createSlice({
     builder.addCase(fetchTopRatedMovies.pending, state => {
       state.isLoading = true
     })
+    builder.addCase(fetchMovieDetails.fulfilled, (state, { payload }) => {
+      const [details, recommendations, credits, reviews] = payload
+      state.movieDetails = details
+      state.recommendationMovies = recommendations
+      state.credits = credits
+      state.reviews = reviews
+      state.isLoading = false
+    })
+    builder.addCase(fetchMovieDetails.pending, state => {
+      state.isLoading = true
+    })
+    builder.addCase(setMovieId, (state, { payload }) => {
+      state.movieId = payload
+    })
   },
 })
-
-export const { actions, reducer: movies } = moviesSlice
 
 const getMovies = state => state.movies
 
@@ -269,3 +288,8 @@ export const getTrendMovies = createSelector(getMovies, movies => movies.trendin
 export const getNowPLayingMovies = createSelector(getMovies, movies => movies.nowPlayingMovies)
 export const getUpcomingMovies = createSelector(getMovies, movies => movies.upcomingMovies)
 export const getTopRatedMovies = createSelector(getMovies, movies => movies.topRatedMovies)
+export const getMovieDetails = createSelector(getMovies, movies => movies.movieDetails)
+export const getRecommendationMovies = createSelector(getMovies, movies => movies.recommendationMovies)
+export const getMovieCredits = createSelector(getMovies, movies => movies.credits)
+export const getMovieReviews = createSelector(getMovies, movies => movies.reviews)
+export const getMovieId = createSelector(getMovies, movies => movies.movieId)
